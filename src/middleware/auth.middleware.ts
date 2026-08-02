@@ -22,11 +22,12 @@ export const isAuthenticated = asyncHandler(
         const newAccessToken = accessTokenGenerate(newPayload);
 
         res.cookie("accessToken", newAccessToken, {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === "production",
-          sameSite: "strict",
-          maxAge: 15 * 60 * 1000,
-        });
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+  path: "/",
+  maxAge: 15 * 60 * 1000,
+});
         userPayload = newPayload;
       }
     }
