@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    // =================== TARGET & MODULE ===================
+    "target": "ES2020",
+    "module": "CommonJS",                   // ✅ Best for Node.js (no need for .js extensions)
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // =================== TYPE DEFINITIONS ===================
+    // 🔥 Ye wala part aapka 'interface' folder recognize karega
+    "typeRoots": ["./src/interface", "./node_modules/@types"],
+    "types": ["node", "express"],          // ✅ Duplicate hata diya
+
+    // =================== IMPORT HELPERS ===================
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+
+    // =================== STRICTNESS ===================
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,    // (False rakhna easy hai) 
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    // =================== OUTPUT HELPER ===================
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // =================== PERFORMANCE / COMPATIBILITY ===================
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+
+  // =================== FILES TO INCLUDE/EXCLUDE ===================
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
